@@ -58,6 +58,16 @@ with open(election_csv) as election:
    
     print('-----------------------------------')
 
-# Exporting Text File
-with open('PyPoll.py', 'w') as f:
-     f.write('PyPoll Results')
+# # Exporting Text File
+with open('PyPoll/analysis/PyPoll Results', 'w') as text:
+     
+     text.write('Election Results' + '\n'\
+    '---------------------------------------\n'\
+    'Total Votes: ' + str(len(totalVotes)) + '\n'\
+    '-----------------------------------\n'\
+    'Charles Casper Stockham: ' + (str(round(len(charles) / len(totalVotes)*100, 3))) + '%(' + str(len(charles)) + ')\n'\
+    'Diana DeGette: ' + (str(round(len(diana) / len(totalVotes)*100, 3))) + '%(' + str(len(diana)) + ')\n'\
+    'Raymon Anthony Doane: ' + (str(round(len(raymon) / len(totalVotes)*100, 3))) + '%(' + str(len(raymon)) + ')\n'\
+    '-----------------------------------\n'\
+    'Winner: '+ (str(winner[0])) + '\n'\
+    '-----------------------------------')
